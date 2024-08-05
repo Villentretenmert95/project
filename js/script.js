@@ -43,3 +43,9 @@ for (let i = 0; i < 2; i++){
 };
 
 console.log(personalMovieDB);
+
+// let a = '4';
+// let b = 4;
+
+// (a === b) ? console.log('ok') : console.log('false');
+// console.log(typeof(a));
