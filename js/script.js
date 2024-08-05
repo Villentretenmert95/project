@@ -48,4 +48,4 @@ console.log(personalMovieDB);
 // let b = 4;
 
 // (a === b) ? console.log('ok') : console.log('false');
-console.log(typeof(a));
+// console.log(typeof(a));
