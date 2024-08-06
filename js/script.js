@@ -15,3 +15,65 @@
 'use strict';
 
 // Код возьмите из предыдущего домашнего задания
+const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+
+const personalMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
+
+for (let i = 0; i < 2; i++){
+    const lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
+          filmMark = +prompt('На сколько оцените его?', '');
+    if (lastFilm != null && filmMark != null && lastFilm != '' && filmMark != '' && lastFilm.length <= 50){
+        personalMovieDB.movies[lastFilm] = filmMark;
+        console.log('OK');
+    } else {
+        console.log('Error');
+        i--;
+        
+    }
+};
+
+// let k = 0;
+
+// while(k < 2){
+//     const lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
+//           filmMark = +prompt('На сколько оцените его?', '');
+//     if (lastFilm != null && filmMark != null && lastFilm != '' && filmMark != '' && lastFilm.length <= 50){
+//         personalMovieDB.movies[lastFilm] = filmMark;
+//         console.log('OK');
+//     } else {
+//         console.log('Error');
+//         k--;
+//     }
+//     k++;
+// }
+
+// do {
+//     const lastFilm = prompt('Один из последних просмотренных фильмов?', ''),
+//     filmMark = +prompt('На сколько оцените его?', '');
+//     if (lastFilm != null && filmMark != null && lastFilm != '' && filmMark != '' && lastFilm.length <= 50){
+//         personalMovieDB.movies[lastFilm] = filmMark;
+//         console.log('OK');
+//     } else {
+//         console.log('Error');
+//         k--;
+//     }    
+//     k++;
+// } while (k < 2);
+
+if (personalMovieDB.count < 10){
+    console.log("Просмотрено довольно мало фильмов");
+} else if (personalMovieDB.count >= 10 && personalMovieDB.count <= 30){
+    console.log("Вы классический зритель");
+} else if (personalMovieDB.count > 30){
+    console.log("Вы киноман");
+} else {
+    console.log("Произошла ошибка");
+}
+
+console.log(personalMovieDB);
